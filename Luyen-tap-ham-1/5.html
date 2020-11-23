@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = ['Polaris','Aldebaran','Deneb','Vega','Altair','Dubhe','Regulus'];
+    let b = ['Ursa Minor','Tarurus','Cygnus','Lyra','Aquila','Ursa Major','Leo'];
+    let c = "";
+    do {
+        c = prompt('Nhập vào đây');
+        if (a.includes(c)) {
+            let i = a.indexOf(c);
+            alert(a[i] + ' thuộc chòm sao ' + b[i]);
+        } else {
+            alert('Không tồn tại ngôi sao bạn nhập');
+        }
+    } while (a.includes(c));
+</script>
+</body>
+</html>

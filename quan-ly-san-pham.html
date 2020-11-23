@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2><strong>Add New Product</strong></h2>
+<input type="text" placeholder="New Product" id="new">
+<button style="color: white; background-color: forestgreen" type="button" onclick="addProduct()">Add</button>
+<h2><strong>Display All Products</strong></h2>
+<table style="text-align: center" id="main"></table>
+<script>
+    let products = ["Sony Xperia","Samsung Galaxy", "Nokia 6","Xiaomi Redmi Note 4", "Apple iphone 6S ", "Xiaomi Mi 5s plus", "Apple iphone 8 plus","Fujitsu F-04E","Oppo A71"];
+    function addProduct() {
+        let i = document.getElementById("new");
+        let product = i.value;
+        products.push(product);
+        i.value = "";
+        displayProduct();
+    }
+    function editProduct(index) {
+        let a = prompt("Edit product",products[index]);
+        products[index] = a;
+        displayProduct();
+    }
+    displayProduct();
+    function deleteProduct(index) {
+        products.splice(index,1);
+        displayProduct();
+    }
+    function displayProduct() {
+        let str = `<tr>
+                        <th>STT</th>
+                        <th>Product Name</th>
+                   </tr>`;
+        for (let i = 0; i < products.length; i++) {
+            str += `<tr>
+                        <td>${i + 1}</td>
+                        <td>${products[i]}</td>
+                        <td><button style="color: white;background-color: forestgreen" onclick="editProduct(${i})">Edit</button></td>
+                        <td><button style="color: white;background-color: forestgreen" onclick="deleteProduct(${i})">Delete</button></td>
+                    </tr>`;
+        }
+        document.getElementById("main").innerHTML = str;
+    }
+</script>
+</body>
+</html>
