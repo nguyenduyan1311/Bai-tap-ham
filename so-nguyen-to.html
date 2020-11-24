@@ -8,8 +8,8 @@
 <input type="number" id="number" placeholder="Nhập số">
 <button type="button" onclick="isPrime()">Check</button>
 <script>
+    let number = isPrime(prompt('Nhập số'))
     function isPrime(number) {
-        var number = document.getElementById('number').value;
         let flag = true;
         if (number < 2) {
             flag = false;
@@ -27,6 +27,7 @@
             alert(number+' không phải là số nguyên tố ')
         }
     }
+    alert(isPrime(number));
 </script>
 </body>
 </html>
